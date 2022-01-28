@@ -1,9 +1,15 @@
 import "./App.scss";
-import Navbar from "./componants/Navbar/Navbar";
+import { Homepage } from "./pages/homepage/Homepage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 function App() {
   return (
     <>
-      <Navbar />
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Homepage />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

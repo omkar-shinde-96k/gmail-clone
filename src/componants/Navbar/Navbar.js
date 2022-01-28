@@ -1,17 +1,17 @@
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
-import SettingsIcon from "@mui/icons-material/Settings";
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import AppsIcon from "@mui/icons-material/Apps";
 import SearchIcon from "@mui/icons-material/Search";
-import FilterListIcon from "@mui/icons-material/FilterList";
+import TuneIcon from "@mui/icons-material/Tune";
 import "./Navbar.scss";
 const Navbar = () => {
   return (
     <>
       <div className="nav">
         <div className="menu">
-          <MenuIcon />
+          <MenuIcon style={{ color: "rgb(95, 99, 104)" }} />
         </div>
         <div className="nav-logo">
           <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r2.png" />
@@ -19,31 +19,24 @@ const Navbar = () => {
         <div className="nav-search">
           <div className="search">
             <div className="search-icon">
-              <SearchIcon />
+              <SearchIcon style={{ color: "rgb(95, 99, 104)" }} />
             </div>
             <div className="search-input"></div>
             <div className="search-filter">
-              <FilterListIcon />
+              <TuneIcon style={{ color: "rgb(95, 99, 104)" }} />
             </div>
           </div>
         </div>
-        <div className="nav-filter">Active</div>
         <div className="nav-support">
-          <HelpOutlineIcon />
+          <HelpOutlineIcon style={{ color: "rgb(95, 99, 104)" }} />
         </div>
         <div className="nav-setting">
-          <SettingsIcon />
+          <SettingsOutlinedIcon style={{ color: "rgb(95, 99, 104)" }} />
         </div>
         <div className="nav-g-apps">
-          <AppsIcon />
+          <AppsIcon style={{ color: "rgb(95, 99, 104)" }} />
         </div>
-        <div className="nav-google-account">
-          <img
-            style={{ width: "100%", height: "80%" }}
-            src="https://admin.google.com/u/0/ac/images/logo.gif?uid=101344229336829121119&service=google_gsuite"
-          />
-          {/* <img src="https://lh3.google.com/u/0/ogw/ADea4I6unLzN5nvUvVXwmLeIEtWXCigYZi6Yrf2Lhgdr=s32-c-mo" /> */}
-        </div>
+        <div className="nav-google-account">A</div>
       </div>
     </>
   );
