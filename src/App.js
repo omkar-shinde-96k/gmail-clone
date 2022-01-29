@@ -1,7 +1,7 @@
 import "./App.scss";
 // import { Homepage } from "./pages/Homepage.js";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
-import { AllMails } from "./Pages/AllMails/AllMails";
+import { AllMails } from "./Pages/AllMails";
 
 import { Navbar } from "./Components/Navbar/Navbar.js";
 import { Sidebar } from "./Components/Sidebar/Sidebar.js";
