@@ -6,7 +6,9 @@ import AppsIcon from "@mui/icons-material/Apps";
 import SearchIcon from "@mui/icons-material/Search";
 import TuneIcon from "@mui/icons-material/Tune";
 import "./Navbar.scss";
-const Navbar = () => {
+
+
+export const Navbar = () => {
   return (
     <>
       <div className="nav">
@@ -42,4 +44,3 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
