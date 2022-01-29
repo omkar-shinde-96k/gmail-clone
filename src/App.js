@@ -1,6 +1,7 @@
 import "./App.scss";
 // import { Homepage } from "./pages/Homepage.js";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import { Navbar } from "./Components/Navbar/Navbar.js";
 import { Sidebar } from "./Components/Sidebar/Sidebar.js";
 
