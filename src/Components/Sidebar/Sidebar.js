@@ -1,5 +1,5 @@
 import React from "react";
-import "./Sidebar.scss";
+import "./SidebarStyle.scss";
 
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import StarOutlinedIcon from "@mui/icons-material/StarOutlined";
@@ -11,7 +11,6 @@ import ScheduleSendIcon from "@mui/icons-material/ScheduleSend";
 import ReportGmailerrorredIcon from "@mui/icons-material/ReportGmailerrorred";
 import DeleteIcon from "@mui/icons-material/Delete";
 import LabelIcon from "@mui/icons-material/Label";
-import { orange } from "@mui/material/colors";
 
 export const Sidebar = () => {
   return (
