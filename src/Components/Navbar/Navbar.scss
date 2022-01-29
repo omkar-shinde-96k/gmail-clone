@@ -54,6 +54,11 @@
         @include flex-center;
         width: 86%;
         height: 100%;
+        border: none;
+        background-color: rgb(241, 243, 244);
+      }
+      :focus {
+        outline: none;
       }
       .search-filter {
         @include flex-center;

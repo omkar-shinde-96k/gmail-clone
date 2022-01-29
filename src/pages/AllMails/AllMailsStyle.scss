@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 @mixin flex-center {
   display: flex;
   justify-content: center;
@@ -20,28 +19,27 @@
     display: flex;
     width: 100%;
     height: 50px;
-    border-bottom: 1px solid #77777731;
+    border-bottom: 1px solid #77777731; 
     justify-content: space-between;
 
     .AllMails-header-left-group {
       width: 150px;
       display: flex;
+      color: #777777;
+      * {
+        cursor: pointer;
+      }
       .AllMails-Checkall-checkbox {
         width: 35.5%;
         @include flex-center;
-        cursor: pointer;
       }
       .AllMails-refresh {
         width: 35.5%;
-        color: #777777;
         @include flex-center;
-        cursor: pointer;
       }
       .AllMails-header-menu {
         width: 35.5%;
-        color: #777777;
         @include flex-center;
-        cursor: pointer;
         :hover {
           background-color: #f1f3f4;
           border-radius: 50%;
@@ -51,9 +49,10 @@
     .AllMails-header-right-group {
       width: 190px;
       display: flex;
+      color: #777777;
+
       .AllMails-header-pages {
         width: 55%;
-        color: #777777;
         @include flex-center;
         font-size: 12px;
       }
@@ -61,7 +60,6 @@
         width: 22.5%;
         @include flex-center;
         cursor: pointer;
-        color: #777777;
         :hover {
           background-color: #f1f3f4;
           border-radius: 50%;
@@ -72,7 +70,6 @@
       }
       .AllMails-header-next-pagination {
         width: 22.5%;
-        color: #777777;
         cursor: pointer;
         @include flex-center;
         :hover {

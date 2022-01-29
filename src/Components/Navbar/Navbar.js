@@ -7,7 +7,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import TuneIcon from "@mui/icons-material/Tune";
 import "./Navbar.scss";
 
-
 export const Navbar = () => {
   return (
     <>
@@ -23,7 +22,11 @@ export const Navbar = () => {
             <div className="search-icon">
               <SearchIcon style={{ color: "rgb(95, 99, 104)" }} />
             </div>
-            <div className="search-input"></div>
+            <input
+              type="text"
+              placeholder="Search Mail"
+              className="search-input"
+            ></input>
             <div className="search-filter">
               <TuneIcon style={{ color: "rgb(95, 99, 104)" }} />
             </div>
@@ -43,4 +46,3 @@ export const Navbar = () => {
     </>
   );
 };
-
