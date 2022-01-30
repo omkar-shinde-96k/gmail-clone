@@ -9,10 +9,12 @@ import { Sidebar } from "./Components/Sidebar/Sidebar.js";
 const Homepage = () => {
   return (
     <>
-      <Navbar />
-      <div style={{ display: "flex" }}>
-        <Sidebar />
-        <Outlet />
+      <div className="main" style={{ width: "100%", height: "100vh" }}>
+        <Navbar />
+        <div style={{ display: "flex", width: "100%" }}>
+          <Sidebar />
+          <Outlet />
+        </div>
       </div>
     </>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import "./AllMailsStyle.scss";
+import "./AllMails.scss";
 
 import RefreshIcon from "@mui/icons-material/Refresh";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
@@ -57,9 +57,10 @@ export const AllMails = () => {
             <p>Promotions</p>
           </div>
         </div>
-
-        {[2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2].map(
-          () => {
+        <div className="AllMails-scroll">
+          {[
+            2, 2, 2, 3, 3, 3, 3, 3, 2, 3, 3, 3, 3, 3, 3, 2, 3, 3, 3, 3, 3, 3, 2,
+          ].map(() => {
             return (
               <>
                 <div className="AllMails-single-mail">
@@ -67,23 +68,29 @@ export const AllMails = () => {
                     <input type="checkbox" />
                   </div>
                   <div className="AllMails-single-mail-checkbox-star">
-                    {false ? (
-                      <StarBorderIcon />
+                    {true ? (
+                      <StarBorderIcon style={{ color: "gray" }} />
                     ) : (
                       <StarIcon style={{ color: "orange" }} />
                     )}
                   </div>
                   <div className="AllMails-single-mail-sender">Amazon.in</div>
-                  <div className="AllMails-single-mail-title">
-                    Amazon Pay Reward Unlocked - Get Get 30% back on Uber - for
-                    your recent Add Money.
+                  <div className="AllMails-single-mail-title-discription">
+                    <p className="AllMails-single-mail-title">
+                      Amazon Pay Reward Unlocked - Get Get 30% back on Uber -for
+                      your recent
+                    </p>
+                    <p className="AllMails-single-mail-discription">
+                      &nbsp; - &nbsp; Amazon Pay Reward Unlocked - Get Get 30%
+                      back U
+                    </p>
                   </div>
                   <div className="AllMails-single-mail-send-time"> 6 Jan</div>
                 </div>
               </>
             );
-          }
-        )}
+          })}
+        </div>
       </div>
     </>
   );

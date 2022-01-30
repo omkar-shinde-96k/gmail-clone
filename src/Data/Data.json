@@ -1,0 +1,22 @@
+{
+    "id" : 1,
+    "from":{
+        "name":"omkar shinde",
+        "email" : "omkar.shinde@humancloud.biz",
+        "snooze" : []
+    },
+    "to":{
+        "name":"xyz user",
+        "email" : "xyz@gmail.com",
+        "snooze" : false
+    },
+    "title" : " Amazon Pay Reward Unlocked - Get Get 30% back on Uber - for your recent Add Money.",
+    "discription":"Amazon Pay Reward Unlocked - Get Get 30% back on Uber - for your recent Add MoneyAmazon Pay Reward Unlocked - Get Get 30% back on Uber - for your recent Add Money",
+    "star" : false,
+    "important" :false,
+    "category" : "social",
+    "checked" : false,
+    "Archive" : false,
+    "read" : false,
+    "trash" : false
+}

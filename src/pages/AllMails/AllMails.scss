@@ -10,11 +10,13 @@
 }
 
 .AllMails {
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
-  // border: 1px solid red;
+  height: 90vh;
+
   .AllMails-header-pagination {
     display: flex;
     width: 100%;
@@ -96,42 +98,73 @@
       }
     }
   }
+  .AllMails-scroll {
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    padding-left: 1px;    
+    .AllMails-single-mail {
+      display: flex;
+      width: 100%;
+      height: 38px;
+      border-bottom: 1px solid rgba(128, 128, 128, 0.233);
 
-  .AllMails-single-mail {
-    display: flex;
-    height: 38px;
-    border-bottom: 1px solid rgba(128, 128, 128, 0.233);
-    .AllMails-single-mail-checkbox-star {
-      @include flex-center;
-      height: 100%;
-      width: 38px;
-      * {
-        font-size: 1.2rem;
+      .AllMails-single-mail-checkbox-star {
+        @include flex-center;
+        height: 100%;
+        width: 38px;
+        * {
+          font-size: 1.2rem;
+        }
+      }
+      .AllMails-single-mail-sender {
+        @include flex-center;
+        justify-content: start;
+        font-weight: bolder;
+        height: 100%;
+        width: 16%;
+        font-size: 0.9rem;
+      }
+      .AllMails-single-mail-title-discription {
+        height: 100%;
+        width: 75%;
+        display: flex;
+        .AllMails-single-mail-title {
+          @include flex-center;
+          font-weight: bolder;
+          justify-content: start;
+          height: 100%;
+          font-size: 0.9rem;
+        }
+        .AllMails-single-mail-discription {
+          @include flex-center;
+          height: 100%;
+        }
+      }
+
+      .AllMails-single-mail-actions-btns {
+        width: 10px;
+        height: 100%;
+      }
+      .AllMails-single-mail-send-time {
+        @include flex-center;
+        height: 100%;
+        width: 5rem;
       }
     }
-    .AllMails-single-mail-sender {
-      @include flex-center;
-      justify-content: start;
-      font-weight: bolder;
-      height: 100%;
-      width: 16%;
-    }
-    .AllMails-single-mail-title {
-      @include flex-center;
-      font-weight: bolder;
-      justify-content: start;
-      height: 100%;
-      width: 75%;
-    }
-    .AllMails-single-mail-discription {
-      height: 100%;
-      background-color: rgb(212, 226, 17);
-    }
-    .AllMails-single-mail-send-time {
-      @include flex-center;
-      height: 100%;
-      width: 5rem;
-    }
+  }
+  ::-webkit-scrollbar {
+    width: 5px;
+    display: block;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+  }
+  .AllMails-single-mail:hover {
+    box-shadow: 1px 1px 1px rgba(131, 127, 127, 0.589),
+      0px 0px 3px rgba(100, 97, 97, 0.719);
   }
 }
 

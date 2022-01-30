@@ -32,13 +32,13 @@ export const Navbar = () => {
             </div>
           </div>
         </div>
-        <div className="nav-support">
+        <div className="nav-right-icons">
           <HelpOutlineIcon style={{ color: "rgb(95, 99, 104)" }} />
         </div>
-        <div className="nav-setting">
+        <div className="nav-right-icons">
           <SettingsOutlinedIcon style={{ color: "rgb(95, 99, 104)" }} />
         </div>
-        <div className="nav-g-apps">
+        <div className="nav-right-icons">
           <AppsIcon style={{ color: "rgb(95, 99, 104)" }} />
         </div>
         <div className="nav-google-account">A</div>
