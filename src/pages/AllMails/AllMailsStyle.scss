@@ -96,6 +96,43 @@
       }
     }
   }
+
+  .AllMails-single-mail {
+    display: flex;
+    height: 38px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.233);
+    .AllMails-single-mail-checkbox-star {
+      @include flex-center;
+      height: 100%;
+      width: 38px;
+      * {
+        font-size: 1.2rem;
+      }
+    }
+    .AllMails-single-mail-sender {
+      @include flex-center;
+      justify-content: start;
+      font-weight: bolder;
+      height: 100%;
+      width: 16%;
+    }
+    .AllMails-single-mail-title {
+      @include flex-center;
+      font-weight: bolder;
+      justify-content: start;
+      height: 100%;
+      width: 75%;
+    }
+    .AllMails-single-mail-discription {
+      height: 100%;
+      background-color: rgb(212, 226, 17);
+    }
+    .AllMails-single-mail-send-time {
+      @include flex-center;
+      height: 100%;
+      width: 5rem;
+    }
+  }
 }
 
 .Active-Filter {

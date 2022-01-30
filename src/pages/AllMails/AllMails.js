@@ -8,6 +8,8 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import PeopleIcon from "@mui/icons-material/People";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import EmailIcon from "@mui/icons-material/Email";
+import StarBorderIcon from "@mui/icons-material/StarBorder";
+import StarIcon from "@mui/icons-material/Star";
 
 export const AllMails = () => {
   return (
@@ -35,7 +37,6 @@ export const AllMails = () => {
             </div>
           </div>
         </div>
-
         <div className="AllMails-filters">
           <div className="AllMails-filters-item Active-Filter">
             <span>
@@ -56,6 +57,33 @@ export const AllMails = () => {
             <p>Promotions</p>
           </div>
         </div>
+
+        {[2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2].map(
+          () => {
+            return (
+              <>
+                <div className="AllMails-single-mail">
+                  <div className="AllMails-single-mail-checkbox-star">
+                    <input type="checkbox" />
+                  </div>
+                  <div className="AllMails-single-mail-checkbox-star">
+                    {false ? (
+                      <StarBorderIcon />
+                    ) : (
+                      <StarIcon style={{ color: "orange" }} />
+                    )}
+                  </div>
+                  <div className="AllMails-single-mail-sender">Amazon.in</div>
+                  <div className="AllMails-single-mail-title">
+                    Amazon Pay Reward Unlocked - Get Get 30% back on Uber - for
+                    your recent Add Money.
+                  </div>
+                  <div className="AllMails-single-mail-send-time"> 6 Jan</div>
+                </div>
+              </>
+            );
+          }
+        )}
       </div>
     </>
   );
