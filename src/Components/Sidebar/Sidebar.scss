@@ -58,12 +58,21 @@
       border-radius: 0px 50px 50px 0;
       display: float;
       align-items: center;
+      text-decoration: none;
       span {
         @include flex-center;
         color: #767676;
         width: 7%;
       }
       p {
+        text-decoration: none;
+        color: #5f5a5a;
+        width: 70%;
+        margin-left: 1.5rem;
+        font-size: 0.9rem;
+      }
+      Link * {
+        text-decoration: none;
         color: #5f5a5a;
         width: 70%;
         margin-left: 1.5rem;

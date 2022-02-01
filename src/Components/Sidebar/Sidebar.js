@@ -14,6 +14,8 @@ import LabelIcon from "@mui/icons-material/Label";
 
 import { useSelector } from "react-redux";
 
+import { Link } from "react-router-dom";
+
 export const Sidebar = () => {
   const mails = useSelector((state) => state.DataReducer);
   console.log("sidevar mails", mails.length);
@@ -27,18 +29,36 @@ export const Sidebar = () => {
           </div>
         </div>
         <div className="sidebar-links">
-          <div className="side-link active-sidebar">
+          <Link to="" className="side-link active-sidebar">
             <span>
               <EmailOutlinedIcon />
             </span>
             <p> Indox</p>
             <div className="inbox-count"> {mails.length} </div>
-          </div>
-          <div className="side-link">
+          </Link>
+          <Link to="allmails" className="side-link">
+            <span>
+              <EmailOutlinedIcon />
+            </span>
+            <p> All Mails </p>
+          </Link>
+          <Link to="starred" className="side-link">
             <span>
               <StarOutlinedIcon />
             </span>
             <p> Starred </p>
+          </Link>
+          <Link to="starred" className="side-link">
+            <span>
+              <DeleteIcon />
+            </span>
+            <p> Trash </p>
+          </Link>
+          <div className="side-link">
+            <span>
+              <LabelImportantIcon />
+            </span>
+            <p> Important </p>
           </div>
           <div className="side-link">
             <span>
@@ -58,12 +78,6 @@ export const Sidebar = () => {
             </span>
             <p> Draft </p>
           </div>
-          <div className="side-link">
-            <span>
-              <LabelImportantIcon />
-            </span>
-            <p> Important </p>
-          </div>
 
           <div className="side-link">
             <span>
@@ -71,24 +85,14 @@ export const Sidebar = () => {
             </span>
             <p> Scheduled </p>
           </div>
-          <div className="side-link">
-            <span>
-              <EmailOutlinedIcon />
-            </span>
-            <p> All Mails </p>
-          </div>
+
           <div className="side-link">
             <span>
               <ReportGmailerrorredIcon />
             </span>
             <p> Spam </p>
           </div>
-          <div className="side-link">
-            <span>
-              <DeleteIcon />
-            </span>
-            <p> Trash </p>
-          </div>
+
           <div className="side-link">
             <span>
               <LabelIcon />
