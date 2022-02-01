@@ -1,5 +1,5 @@
 import React from "react";
-import "./SidebarStyle.scss";
+import "./Sidebar.scss";
 
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import StarOutlinedIcon from "@mui/icons-material/StarOutlined";
@@ -12,7 +12,11 @@ import ReportGmailerrorredIcon from "@mui/icons-material/ReportGmailerrorred";
 import DeleteIcon from "@mui/icons-material/Delete";
 import LabelIcon from "@mui/icons-material/Label";
 
+import { useSelector } from "react-redux";
+
 export const Sidebar = () => {
+  const mails = useSelector((state) => state.DataReducer);
+  console.log("sidevar mails", mails.length);
   return (
     <>
       <div className="sidebar">
@@ -28,7 +32,7 @@ export const Sidebar = () => {
               <EmailOutlinedIcon />
             </span>
             <p> Indox</p>
-            <div className="inbox-count"> 22 </div>
+            <div className="inbox-count"> {mails.length} </div>
           </div>
           <div className="side-link">
             <span>

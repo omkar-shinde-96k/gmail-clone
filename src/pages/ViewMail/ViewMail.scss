@@ -1,0 +1,35 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.view-mail {
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+  padding-left: 1px;
+  .view-mail-header {
+    height: 50px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.384);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    .view-mail-header-icons {
+      @include flex-center;
+      width: 50px;
+      height: 100%;
+      color: gray;
+      * {
+        cursor: pointer;
+      }
+    }
+  }
+  .view-mail-title {
+    height: 70px;
+    font-weight: bold;
+    @include flex-center;
+    justify-content: start;
+    font-size: 1.5rem;
+  }
+}

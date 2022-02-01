@@ -1,5 +1,7 @@
-import React from "react";
-import "./AllMails.scss";
+import React, { useState } from "react";
+import "./inbox.scss";
+
+import SingleMail from "../../Components/SingleMail/SingleMail";
 
 import RefreshIcon from "@mui/icons-material/Refresh";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
@@ -8,10 +10,16 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import PeopleIcon from "@mui/icons-material/People";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import EmailIcon from "@mui/icons-material/Email";
-import StarBorderIcon from "@mui/icons-material/StarBorder";
-import StarIcon from "@mui/icons-material/Star";
+
+import { useSelector, useDispatch } from "react-redux";
 
 export const AllMails = () => {
+  const dispatch = useDispatch();
+  const Mails = useSelector((state) => state.DataReducer || []);
+  console.log("state", Mails);
+
+  const [filter, setFilter] = useState("primary");
+
   return (
     <>
       <div className="AllMails">
@@ -38,19 +46,40 @@ export const AllMails = () => {
           </div>
         </div>
         <div className="AllMails-filters">
-          <div className="AllMails-filters-item Active-Filter">
+          <div
+            onClick={() => setFilter("primary")}
+            className={
+              filter == "primary"
+                ? "AllMails-filters-item primary"
+                : "AllMails-filters-item "
+            }
+          >
             <span>
               <EmailIcon />
             </span>
             <p> Primary </p>
           </div>
-          <div className="AllMails-filters-item ">
+          <div
+            onClick={() => setFilter("social")}
+            className={
+              filter == "social"
+                ? "AllMails-filters-item social"
+                : "AllMails-filters-item "
+            }
+          >
             <span>
               <PeopleIcon />
             </span>
             <p>Social</p>
           </div>
-          <div className="AllMails-filters-item ">
+          <div
+            onClick={() => setFilter("promotions")}
+            className={
+              filter == "promotions"
+                ? "AllMails-filters-item promotions"
+                : "AllMails-filters-item "
+            }
+          >
             <span>
               <LocalOfferIcon />
             </span>
@@ -58,37 +87,14 @@ export const AllMails = () => {
           </div>
         </div>
         <div className="AllMails-scroll">
-          {[
-            2, 2, 2, 3, 3, 3, 3, 3, 2, 3, 3, 3, 3, 3, 3, 2, 3, 3, 3, 3, 3, 3, 2,
-          ].map(() => {
-            return (
-              <>
-                <div className="AllMails-single-mail">
-                  <div className="AllMails-single-mail-checkbox-star">
-                    <input type="checkbox" />
-                  </div>
-                  <div className="AllMails-single-mail-checkbox-star">
-                    {true ? (
-                      <StarBorderIcon style={{ color: "gray" }} />
-                    ) : (
-                      <StarIcon style={{ color: "orange" }} />
-                    )}
-                  </div>
-                  <div className="AllMails-single-mail-sender">Amazon.in</div>
-                  <div className="AllMails-single-mail-title-discription">
-                    <p className="AllMails-single-mail-title">
-                      Amazon Pay Reward Unlocked - Get Get 30% back on Uber -for
-                      your recent
-                    </p>
-                    <p className="AllMails-single-mail-discription">
-                      &nbsp; - &nbsp; Amazon Pay Reward Unlocked - Get Get 30%
-                      back U
-                    </p>
-                  </div>
-                  <div className="AllMails-single-mail-send-time"> 6 Jan</div>
-                </div>
-              </>
-            );
+          {Mails.map((curr, index) => {
+            if (curr.category === filter) {
+              return (
+                <>
+                  <SingleMail curr={curr} index={index} />
+                </>
+              );
+            }
           })}
         </div>
       </div>

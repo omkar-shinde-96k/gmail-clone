@@ -12,7 +12,7 @@ export const Navbar = () => {
     <>
       <div className="nav">
         <div className="menu">
-          <MenuIcon style={{ color: "rgb(95, 99, 104)" }} />
+          <MenuIcon/>
         </div>
         <div className="nav-logo">
           <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r2.png" />
@@ -20,7 +20,7 @@ export const Navbar = () => {
         <div className="nav-search">
           <div className="search">
             <div className="search-icon">
-              <SearchIcon style={{ color: "rgb(95, 99, 104)" }} />
+              <SearchIcon/>
             </div>
             <input
               type="text"
@@ -28,18 +28,18 @@ export const Navbar = () => {
               className="search-input"
             ></input>
             <div className="search-filter">
-              <TuneIcon style={{ color: "rgb(95, 99, 104)" }} />
+              <TuneIcon/>
             </div>
           </div>
         </div>
         <div className="nav-right-icons">
-          <HelpOutlineIcon style={{ color: "rgb(95, 99, 104)" }} />
+          <HelpOutlineIcon />
         </div>
         <div className="nav-right-icons">
-          <SettingsOutlinedIcon style={{ color: "rgb(95, 99, 104)" }} />
+          <SettingsOutlinedIcon />
         </div>
         <div className="nav-right-icons">
-          <AppsIcon style={{ color: "rgb(95, 99, 104)" }} />
+          <AppsIcon />
         </div>
         <div className="nav-google-account">A</div>
       </div>
