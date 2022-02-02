@@ -43,27 +43,25 @@
       font-weight: bolder;
     }
     .single-mail-title-discription {
-      width: 77%;
+      width: 83%;
       display: flex;
       .single-mail-title {
-        @include flex-center;
-
+        display: flex;
+        align-items: center;
         height: 100%;
         font-size: 0.9rem;
         font-weight: bolder;
-        white-space: nowrap;
+        white-space: nowrap !important;
       }
       .single-mail-discription {
-        @include flex-center;
-
         height: 100%;
-        font-size: 1rem;
-        white-space: nowrap;
+        font-size: 0.9rem;
+        white-space: nowrap !important;
         overflow: hidden;
-        text-overflow: ellipsis;
+        text-overflow: ellipsis !important;
+        padding-top: 5px;
       }
     }
-
     .ReadMail {
       font-weight: normal !important;
     }
@@ -74,15 +72,19 @@
     @include flex-center;
     justify-content: space-evenly;
     * {
-      color: rgba(138, 132, 132, 0.801);
       cursor: pointer;
     }
+   
   }
   .single-mail-send-time {
     @include flex-center;
     justify-content: start;
     height: 100%;
     width: 5%;
+    font-weight: bolder;
+  }
+  .ReadMail {
+    font-weight: normal !important;
   }
 }
 

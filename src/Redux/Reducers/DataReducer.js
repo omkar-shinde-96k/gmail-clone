@@ -10,7 +10,25 @@ const DataReducer = (state = emails, action) => {
 
     case "READMAILACTION": {
       state = state.map((curr) => {
-        if (curr.id === action.payload) curr.read = true;
+        if (curr.id === action.payload) curr.read = !curr.read;
+        return curr;
+      });
+      return state;
+    }
+
+    case "TRASHMAILACTION": {
+      state = state.map((curr) => {
+        if (curr.id === action.payload) curr.trash = true;
+        return curr;
+      });
+
+      return state;
+    }
+
+    case "ARCHIVEMAILACTION": {
+      console.log("ARCHIVEMAILACTION reducer");
+      state = state.map((curr) => {
+        if (curr.id === action.payload) curr.archive = !curr.archive;
         return curr;
       });
       return state;
@@ -35,17 +53,17 @@ const emails = [
       name: "xyz user",
       email: "xyz@gmail.com",
     },
-    title: " Amazon Pay Reward Unlocked - Get Get 30% back on Uber .",
+    title:
+      " Default Trashed , Amazon Pay Reward Unlocked - Get Get 30% back on Uber .",
     discription:
-      "Amazon Pay Reward Unlocked - Get Get 30% back on Uber - for your recent Add MoneyAmazon Pay Reward Unlocked - Get Get 30% back on Uber - for your recent Add Money",
-    date: "2 Feb",
+      "  Default Trashed ,  Amazon Pay Reward Unlocked - Get Get 30% back on Uber - for your recent Add MoneyAmazon Pay Reward Unlocked - Get Get 30% back on Uber - for your recent Add Money",
     star: true,
     important: false,
     category: "primary",
     checked: false,
-    Archive: false,
-    read: false,
-    trash: false,
+    archive: true,
+    read: true,
+    trash: true,
     date: "2 Feb",
   },
 
@@ -68,7 +86,7 @@ const emails = [
     important: false,
     category: "primary",
     checked: false,
-    Archive: false,
+    archive: false,
     read: false,
     trash: false,
     date: "22 Dec",
@@ -93,8 +111,8 @@ const emails = [
     important: false,
     category: "primary",
     checked: false,
-    Archive: false,
-    read: false,
+    archive: false,
+    read: true,
     trash: false,
     date: "2 Feb",
   },
@@ -118,7 +136,7 @@ const emails = [
     important: false,
     category: "primary",
     checked: false,
-    Archive: false,
+    archive: false,
     read: false,
     trash: false,
     date: "2 Feb",
@@ -142,7 +160,7 @@ const emails = [
     important: false,
     category: "primary",
     checked: false,
-    Archive: false,
+    archive: false,
     read: false,
     trash: false,
     date: "2 Feb",
@@ -167,7 +185,7 @@ const emails = [
     important: false,
     category: "primary",
     checked: false,
-    Archive: false,
+    archive: false,
     read: false,
     trash: false,
     date: "2 Feb",
@@ -192,7 +210,7 @@ const emails = [
     important: false,
     category: "primary",
     checked: false,
-    Archive: false,
+    archive: false,
     read: false,
     trash: false,
     date: "2 Feb",
@@ -217,7 +235,7 @@ const emails = [
     important: false,
     category: "primary",
     checked: false,
-    Archive: false,
+    archive: false,
     read: false,
     trash: false,
     date: "2 Feb",
@@ -242,7 +260,7 @@ const emails = [
     important: false,
     category: "primary",
     checked: false,
-    Archive: false,
+    archive: false,
     read: false,
     trash: false,
     date: "2 Feb",
@@ -267,7 +285,7 @@ const emails = [
     important: false,
     category: "primary",
     checked: false,
-    Archive: false,
+    archive: false,
     read: false,
     trash: false,
     date: "2 Feb",
@@ -292,7 +310,7 @@ const emails = [
     important: false,
     category: "primary",
     checked: false,
-    Archive: false,
+    archive: false,
     read: false,
     trash: false,
     date: "2 Feb",
@@ -317,7 +335,7 @@ const emails = [
     important: false,
     category: "primary",
     checked: false,
-    Archive: false,
+    archive: false,
     read: false,
     trash: false,
     date: "2 Feb",
@@ -342,7 +360,7 @@ const emails = [
     important: false,
     category: "primary",
     checked: false,
-    Archive: false,
+    archive: false,
     read: false,
     trash: false,
     date: "2 Feb",
@@ -367,7 +385,7 @@ const emails = [
     important: false,
     category: "primary",
     checked: false,
-    Archive: false,
+    archive: false,
     read: false,
     trash: false,
     date: "2 Feb",
@@ -392,161 +410,12 @@ const emails = [
     important: false,
     category: "primary",
     checked: false,
-    Archive: false,
+    archive: false,
     read: false,
     trash: false,
     date: "2 Feb",
   },
 
-  {
-    id: 11,
-    from: {
-      name: "omkar shinde",
-      email: "omkar.shinde@humancloud.biz",
-      snooze: [],
-    },
-    to: {
-      name: "xyz user",
-      email: "xyz@gmail.com",
-      snooze: false,
-    },
-    title: " Amazon Pay Reward Unlocked - Get Get 30% back on Uber .",
-    discription:
-      "Amazon Pay Reward Unlocked - Get Get 30% back on Uber - for your recent Add MoneyAmazon Pay Reward Unlocked - Get Get 30% back on Uber - for your recent Add Money",
-    star: false,
-    important: false,
-    category: "promotions",
-    checked: false,
-    Archive: false,
-    read: false,
-    trash: false,
-    date: "2 Feb",
-  },
-
-  {
-    id: 12,
-    from: {
-      name: "omkar shinde",
-      email: "omkar.shinde@humancloud.biz",
-      snooze: [],
-    },
-    to: {
-      name: "xyz user",
-      email: "xyz@gmail.com",
-      snooze: false,
-    },
-    title: " Amazon Pay Reward Unlocked - Get Get 30% back on Uber .",
-    discription:
-      "Amazon Pay Reward Unlocked - Get Get 30% back on Uber - for your recent Add MoneyAmazon Pay Reward Unlocked - Get Get 30% back on Uber - for your recent Add Money",
-    star: false,
-    important: false,
-    category: "promotions",
-    checked: false,
-    Archive: false,
-    read: false,
-    trash: false,
-    date: "2 Feb",
-  },
-
-  {
-    id: 13,
-    from: {
-      name: "omkar shinde",
-      email: "omkar.shinde@humancloud.biz",
-      snooze: [],
-    },
-    to: {
-      name: "xyz user",
-      email: "xyz@gmail.com",
-      snooze: false,
-    },
-    title: " Amazon Pay Reward Unlocked - Get Get 30% back on Uber .",
-    discription:
-      "Amazon Pay Reward Unlocked - Get Get 30% back on Uber - for your recent Add MoneyAmazon Pay Reward Unlocked - Get Get 30% back on Uber - for your recent Add Money",
-    star: false,
-    important: false,
-    category: "promotions",
-    checked: false,
-    Archive: false,
-    read: false,
-    trash: false,
-    date: "2 Feb",
-  },
-
-  {
-    id: 14,
-    from: {
-      name: "omkar shinde",
-      email: "omkar.shinde@humancloud.biz",
-      snooze: [],
-    },
-    to: {
-      name: "xyz user",
-      email: "xyz@gmail.com",
-      snooze: false,
-    },
-    title: " Amazon Pay Reward Unlocked - Get Get 30% back on Uber .",
-    discription:
-      "Amazon Pay Reward Unlocked - Get Get 30% back on Uber - for your recent Add MoneyAmazon Pay Reward Unlocked - Get Get 30% back on Uber - for your recent Add Money",
-    star: false,
-    important: false,
-    category: "social",
-    checked: false,
-    Archive: false,
-    read: false,
-    trash: false,
-    date: "2 Feb",
-  },
-
-  {
-    id: 15,
-    from: {
-      name: "omkar shinde",
-      email: "omkar.shinde@humancloud.biz",
-      snooze: [],
-    },
-    to: {
-      name: "xyz user",
-      email: "xyz@gmail.com",
-      snooze: false,
-    },
-    title: " Amazon Pay Reward Unlocked - Get Get 30% back on Uber .",
-    discription:
-      "Amazon Pay Reward Unlocked - Get Get 30% back on Uber - for your recent Add MoneyAmazon Pay Reward Unlocked - Get Get 30% back on Uber - for your recent Add Money",
-    star: false,
-    important: false,
-    category: "social",
-    checked: false,
-    Archive: false,
-    read: false,
-    trash: false,
-    date: "2 Feb",
-  },
-
-  {
-    id: 15,
-    from: {
-      name: "omkar shinde",
-      email: "omkar.shinde@humancloud.biz",
-      snooze: [],
-    },
-    to: {
-      name: "xyz user",
-      email: "xyz@gmail.com",
-      snooze: false,
-    },
-    title: " Amazon Pay Reward Unlocked - Get Get 30% back on Uber .",
-    discription:
-      "Amazon Pay Reward Unlocked - Get Get 30% back on Uber - for your recent Add MoneyAmazon Pay Reward Unlocked - Get Get 30% back on Uber - for your recent Add Money",
-    star: false,
-    important: false,
-    category: "social",
-    checked: false,
-    Archive: false,
-    read: false,
-    trash: false,
-    date: "2 Feb",
-  },
   {
     id: 16,
     from: {
@@ -564,15 +433,115 @@ const emails = [
       "Amazon Pay Reward Unlocked - Get Get 30% back on Uber - for your recent Add MoneyAmazon Pay Reward Unlocked - Get Get 30% back on Uber - for your recent Add Money",
     star: false,
     important: false,
-    category: "social",
+    category: "primary",
     checked: false,
-    Archive: false,
+    archive: false,
     read: false,
     trash: false,
     date: "2 Feb",
   },
   {
     id: 17,
+    from: {
+      name: "vercel[bot]",
+      email: "omkar.shinde@humancloud.biz",
+      snooze: [],
+    },
+    to: {
+      name: "xyz user",
+      email: "xyz@gmail.com",
+      snooze: false,
+    },
+    title: "Re: [omkar-shinde-96k/gmail-clone] mail filters UI added (c5a329e)",
+    discription:
+      "Successfully deployed to the following URLs: Successfully deployed to the following URLs:",
+    star: false,
+    important: false,
+    category: "social",
+    checked: false,
+    archive: false,
+    read: false,
+    trash: false,
+    date: "2 Feb",
+  },
+
+  {
+    id: 18,
+    from: {
+      name: "Groww",
+      email: "omkar.shinde@humancloud.biz",
+      snooze: [],
+    },
+    to: {
+      name: "xyz user",
+      email: "xyz@gmail.com",
+      snooze: false,
+    },
+    title: "Masterclass invite: All about debt funds | 30 Jan",
+    discription:
+      "No, not the Bond films. We are talking about dynamic bond funds that come under debt funds. No, not the Bond films. We are talking about dynamic bond funds that come under debt funds.  No, not the Bond films. We are talking about dynamic bond funds that come under debt funds.",
+    star: false,
+    important: false,
+    category: "social",
+    checked: false,
+    archive: false,
+    read: false,
+    trash: false,
+    date: "2 Feb",
+  },
+
+  {
+    id: 19,
+    from: {
+      name: "DevFest India",
+      email: "omkar.shinde@humancloud.biz",
+      snooze: [],
+    },
+    to: {
+      name: "xyz user",
+      email: "xyz@gmail.com",
+      snooze: false,
+    },
+    title: " [DevFest India 2021] Share your success story.",
+    discription:
+      "Hi there,Thank you so much for attending DevFest India 2021 and showing your love and confidence in the event we planned for you!",
+    star: false,
+    important: false,
+    category: "social",
+    checked: false,
+    archive: false,
+    read: false,
+    trash: false,
+    date: "2 Feb",
+  },
+
+  {
+    id: 20,
+    from: {
+      name: "Coding Ninjas",
+      email: "omkar.shinde@humancloud.biz",
+      snooze: [],
+    },
+    to: {
+      name: "xyz user",
+      email: "xyz@gmail.com",
+      snooze: false,
+    },
+    title: "Scholarships don't last forever....",
+    discription:
+      "Hey Om, Is winning Google CodeJam, the Facebook Hacker Cup, and other such competitions the stuff of your dreams? And it comes with an Early Bird offer, too! Get 40% off on the Competitive Programming course for the next 1 week. So, Hurry Up! And register now. ",
+    star: false,
+    important: false,
+    category: "promotions",
+    checked: false,
+    archive: false,
+    read: false,
+    trash: false,
+    date: "2 Feb",
+  },
+
+  {
+    id: 21,
     from: {
       name: "omkar shinde",
       email: "omkar.shinde@humancloud.biz",
@@ -588,9 +557,9 @@ const emails = [
       "Amazon Pay Reward Unlocked - Get Get 30% back on Uber - for your recent Add MoneyAmazon Pay Reward Unlocked - Get Get 30% back on Uber - for your recent Add Money",
     star: false,
     important: false,
-    category: "social",
+    category: "promotions",
     checked: false,
-    Archive: false,
+    archive: false,
     read: false,
     trash: false,
     date: "2 Feb",

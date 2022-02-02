@@ -15,7 +15,6 @@
   flex-direction: column;
   height: 100%;
   width: 17%;
-  //border: 1px solid black;
   padding-right: 1rem;
   overflow: hidden;
   .compose {
@@ -80,20 +79,16 @@
       }
       .inbox-count {
         width: 5%;
-        // margin-left:4rem;
       }
     }
   }
 }
 
-.active-sidebar {
-  background-color: #fce8e6;
-  color: #d93025;
-  font-weight: bold;
-  span * {
-    color: #d93025;
-  }
-  p {
+.active {
+  background-color: #fce8e6 !important;
+  * {
+    background-color: #fce8e6 !important;
     color: #d93025 !important;
+    font-weight: bold !important;
   }
 }

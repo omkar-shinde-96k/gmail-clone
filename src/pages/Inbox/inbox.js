@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./inbox.scss";
 
 import SingleMail from "../../Components/SingleMail/SingleMail";
@@ -13,12 +13,44 @@ import EmailIcon from "@mui/icons-material/Email";
 
 import { useSelector, useDispatch } from "react-redux";
 
-export const AllMails = () => {
+export const Inbox = () => {
   const dispatch = useDispatch();
-  const Mails = useSelector((state) => state.DataReducer || []);
-  console.log("state", Mails);
 
   const [filter, setFilter] = useState("primary");
+  const [page, setPage] = useState(1);
+  const Mails = useSelector((state) => state.DataReducer || []);
+
+  let FilteredMails = Mails.filter((val) => {
+    if (val.category === filter && !val.trash && !val.archive) {
+      return val;
+    }
+  });
+
+  let limit = 15;
+  let skip = limit * (page - 1);
+
+  let totalPages = Math.ceil(FilteredMails.length / limit);
+
+  let FinalFilteredMails = FilteredMails.filter((FinalVal, index) => {
+    if (index >= skip && index < skip + limit) {
+      return FinalVal;
+    }
+  });
+
+  const pageInc = () => {
+    if (page < totalPages) {
+      setPage(page + 1);
+    }
+  };
+  const pageDec = () => {
+    if (page > 1) {
+      setPage(page - 1);
+    }
+  };
+
+  function refreshPage() {
+    window.location.reload(false);
+  }
 
   return (
     <>
@@ -29,19 +61,25 @@ export const AllMails = () => {
               <input type="checkbox" />
             </div>
             <div className="AllMails-refresh">
-              <RefreshIcon />
+              <RefreshIcon onClick={() => refreshPage()} />
             </div>
             <div className="AllMails-header-menu">
               <MoreVertIcon />
             </div>
           </div>
           <div className="AllMails-header-right-group">
-            <div className="AllMails-header-pages">1-10 of 1,000</div>
-            <div className="AllMails-header-pagination-icons">
-              <ArrowBackIosIcon />
+            <div className="AllMails-header-pages">
+              {skip + 1} -
+              {skip + limit >= FilteredMails.length
+                ? FilteredMails.length
+                : skip + limit}{" "}
+              of {FilteredMails.length}
             </div>
             <div className="AllMails-header-pagination-icons">
-              <ArrowForwardIosIcon />
+              <ArrowBackIosIcon onClick={pageDec} />
+            </div>
+            <div className="AllMails-header-pagination-icons">
+              <ArrowForwardIosIcon onClick={pageInc} />
             </div>
           </div>
         </div>
@@ -87,14 +125,8 @@ export const AllMails = () => {
           </div>
         </div>
         <div className="AllMails-scroll">
-          {Mails.map((curr, index) => {
-            if (curr.category === filter) {
-              return (
-                <>
-                  <SingleMail curr={curr} index={index} />
-                </>
-              );
-            }
+          {FinalFilteredMails?.map((curr, index) => {
+            return <SingleMail key={curr?.id} index={index} curr={curr} />;
           })}
         </div>
       </div>
