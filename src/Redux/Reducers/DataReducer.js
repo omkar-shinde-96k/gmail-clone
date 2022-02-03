@@ -1,4 +1,5 @@
 const DataReducer = (state = emails, action) => {
+
   switch (action.type) {
     case "STARTOGGLEACTION": {
       state = state.map((curr) => {
@@ -45,7 +46,7 @@ const emails = [
   {
     id: 1,
     from: {
-      name: "Omkar Shinde",
+      name: "omkar Shinde",
       email: "omkar.shinde@humancloud.biz",
       snooze: [],
     },

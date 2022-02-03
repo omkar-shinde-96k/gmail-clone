@@ -29,13 +29,13 @@ export const Inbox = () => {
   let limit = 15;
   let skip = limit * (page - 1);
 
-  let totalPages = Math.ceil(FilteredMails.length / limit);
-
   let FinalFilteredMails = FilteredMails.filter((FinalVal, index) => {
     if (index >= skip && index < skip + limit) {
       return FinalVal;
     }
   });
+
+  let totalPages = Math.ceil(FilteredMails.length / limit);
 
   const pageInc = () => {
     if (page < totalPages) {

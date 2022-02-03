@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import StarIcon from "@mui/icons-material/Star";
 import { useSelector, useDispatch } from "react-redux";
+
 import {
   StarToggleActon,
   ReadMailAction,
@@ -36,7 +37,7 @@ function SingleMail({ curr, index }) {
         </div>
       </div>
       <Link
-        to={`/${curr.id}`}
+        to={`id/${curr.id}`}
         className="link"
         onClick={() => dispatch(ReadMailAction(curr?.id))}
       >
@@ -93,7 +94,7 @@ function SingleMail({ curr, index }) {
           curr.read ? "single-mail-send-time ReadMail" : "single-mail-send-time"
         }
       >
-        {index + 1} Jan &nbsp;
+        {curr.id} Jan &nbsp;
       </div>
     </div>
   );

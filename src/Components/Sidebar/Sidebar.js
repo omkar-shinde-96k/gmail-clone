@@ -6,27 +6,36 @@ import StarOutlinedIcon from "@mui/icons-material/StarOutlined";
 import AccessTimeFilledOutlinedIcon from "@mui/icons-material/AccessTimeFilledOutlined";
 import SendIcon from "@mui/icons-material/Send";
 import DescriptionIcon from "@mui/icons-material/Description";
-import LabelImportantIcon from "@mui/icons-material/LabelImportant";
 import ScheduleSendIcon from "@mui/icons-material/ScheduleSend";
 import ReportGmailerrorredIcon from "@mui/icons-material/ReportGmailerrorred";
 import DeleteIcon from "@mui/icons-material/Delete";
 import LabelIcon from "@mui/icons-material/Label";
-
+import { SendEmail } from "../SendEmail/SendEmail";
 import { useSelector } from "react-redux";
 
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const Sidebar = () => {
   const mails = useSelector((state) => state.DataReducer);
+
+  const [composeToggle, setComposeToggle] = React.useState(false);
+
+  const ToggleHandler = () => {
+    setComposeToggle(!composeToggle);
+  };
+
   return (
     <>
       <div className="sidebar">
         <div className="compose">
-          <div className="compose-btn">
+          <div className="compose-btn" onClick={ToggleHandler}>
             <img src="./images/plus-icon.jpg" />
             <p>Compose </p>
           </div>
         </div>
+
+        {composeToggle ? <SendEmail ToggleHandler={ToggleHandler} /> : ""}
+
         <div className="sidebar-links">
           <NavLink to="" className="side-link ">
             <span>
@@ -59,7 +68,7 @@ export const Sidebar = () => {
             </span>
             <p> Archive </p>
           </NavLink>
-    
+
           <div className="side-link">
             <span>
               <AccessTimeFilledOutlinedIcon />

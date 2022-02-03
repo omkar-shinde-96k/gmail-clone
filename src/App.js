@@ -7,6 +7,7 @@ import { Starred } from "./pages/Starred/Starred";
 import { Allmails } from "./pages/Allmails/Allmails";
 import { Trashed } from "./pages/Trashed/Trashed";
 import { Archived } from "./pages/Archived/Archived";
+import { SearchMail } from "./pages/SearchMail/SearchMail";
 
 function App() {
   return (
@@ -14,11 +15,12 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Homepage />}>
-            <Route path="/:id" element={<ViewMail />} />
+            <Route path="/id/:id" element={<ViewMail />} />
             <Route path="/starred" element={<Starred />} />
             <Route path="/allmails" element={<Allmails />} />
             <Route path="/trashed" element={<Trashed />} />
             <Route path="/archived" element={<Archived />} />
+            <Route path="/:searchKey" element={<SearchMail />} />
             <Route index element={<Inbox />} />
           </Route>
         </Routes>
